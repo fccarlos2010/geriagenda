@@ -1,0 +1,1 @@
+console.log("GeriAgenda iniciado com sucesso!");
