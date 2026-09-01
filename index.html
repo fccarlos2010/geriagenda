@@ -5,130 +5,235 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>GeriAgenda - Cadastro</title>
+    <title>GeriAgenda - Datas e Horários</title>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <main class="login-container">
+    <header class="topo">
+        <div class="logo-area">
+            <div class="logo-icon">G</div>
 
-        <section class="login-card cadastro-card">
-
-            <div class="logo">
-                <div class="logo-icon">G</div>
+            <div>
                 <h1>GeriAgenda</h1>
+                <p>Agendamento de consultas geriátricas</p>
+            </div>
+        </div>
+
+        <div class="usuario">
+            Olá, Maria Silva!
+            <span>👤</span>
+        </div>
+    </header>
+
+
+    <main class="container">
+
+        <div class="cabecalho-pagina">
+            <div>
+                <h2>Datas e horários disponíveis</h2>
+
+                <p>
+                    Escolha uma data e um horário para realizar
+                    seu agendamento.
+                </p>
             </div>
 
-            <p class="subtitle">
-                Agendamento de consultas geriátricas
-            </p>
+            <a href="index.html" class="voltar">
+                ← Voltar
+            </a>
+        </div>
 
-            <h2>Cadastro do paciente</h2>
 
-            <form id="cadastroForm">
+        <section class="data-atendimento">
 
-                <div class="form-group">
-                    <label for="nome">Nome completo</label>
+            <div class="icone-calendario">
+                📅
+            </div>
 
-                    <input
-                        type="text"
-                        id="nome"
-                        name="nome"
-                        placeholder="Digite seu nome completo"
-                        required
-                    >
-                </div>
+            <div class="informacoes-data">
 
-                <div class="form-group">
-                    <label for="cpf">CPF</label>
+                <h3>
+                    15 de setembro de 2026
+                    <span>(Terça-feira)</span>
+                </h3>
 
-                    <input
-                        type="text"
-                        id="cpf"
-                        name="cpf"
-                        placeholder="Digite seu CPF"
-                        maxlength="14"
-                        required
-                    >
-                </div>
+                <p>
+                    Início: <strong>07:30h</strong>
+                    &nbsp; • &nbsp;
+                    <strong>19 vagas disponíveis de 20</strong>
+                </p>
 
-                <div class="form-group">
-                    <label for="nascimento">Data de nascimento</label>
+                <small>
+                    Cada consulta tem duração aproximada de 40 minutos.
+                </small>
 
-                    <input
-                        type="date"
-                        id="nascimento"
-                        name="nascimento"
-                        required
-                    >
-                </div>
-
-                <div class="form-group">
-                    <label for="telefone">Telefone</label>
-
-                    <input
-                        type="tel"
-                        id="telefone"
-                        name="telefone"
-                        placeholder="Digite seu telefone"
-                        required
-                    >
-                </div>
-
-                <div class="form-group">
-                    <label for="email">E-mail</label>
-
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="Digite seu e-mail"
-                        required
-                    >
-                </div>
-
-                <div class="form-group">
-                    <label for="senha">Senha</label>
-
-                    <input
-                        type="password"
-                        id="senha"
-                        name="senha"
-                        placeholder="Crie uma senha"
-                        required
-                    >
-                </div>
-
-                <div class="form-group">
-                    <label for="confirmarSenha">Confirmar senha</label>
-
-                    <input
-                        type="password"
-                        id="confirmarSenha"
-                        name="confirmarSenha"
-                        placeholder="Digite a senha novamente"
-                        required
-                    >
-                </div>
-
-                <button type="submit" class="btn-login">
-                    Cadastrar
-                </button>
-
-            </form>
-
-            <p class="cadastro">
-                Já possui cadastro?
-                <a href="index.html">Voltar para o Login</a>
-            </p>
-
-            <p id="mensagem" class="mensagem"></p>
+            </div>
 
         </section>
 
+
+        <section class="horarios-section">
+
+            <div class="titulo-horarios">
+
+                <div>
+                    <h2>Escolha seu horário</h2>
+
+                    <p>
+                        Selecione um dos horários disponíveis abaixo.
+                    </p>
+                </div>
+
+                <div class="legenda">
+
+                    <span class="disponivel">
+                        ● Disponível
+                    </span>
+
+                    <span class="ocupado">
+                        ● Ocupado
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="horarios">
+
+                <button class="horario disponivel" data-horario="07:30">
+                    <strong>07:30</strong>
+                    <span>Disponível</span>
+                </button>
+
+
+                <button class="horario ocupado" disabled>
+                    <strong>08:10</strong>
+                    <span>Ocupado</span>
+                </button>
+
+
+                <button class="horario disponivel" data-horario="08:50">
+                    <strong>08:50</strong>
+                    <span>Disponível</span>
+                </button>
+
+
+                <button class="horario disponivel" data-horario="09:30">
+                    <strong>09:30</strong>
+                    <span>Disponível</span>
+                </button>
+
+
+                <button class="horario disponivel" data-horario="10:10">
+                    <strong>10:10</strong>
+                    <span>Disponível</span>
+                </button>
+
+
+                <button class="horario disponivel" data-horario="10:50">
+                    <strong>10:50</strong>
+                    <span>Disponível</span>
+                </button>
+
+
+                <button class="horario disponivel" data-horario="11:30">
+                    <strong>11:30</strong>
+                    <span>Disponível</span>
+                </button>
+
+
+                <button class="horario disponivel" data-horario="12:10">
+                    <strong>12:10</strong>
+                    <span>Disponível</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <section class="outras-datas">
+
+            <h2>Outras datas de atendimento</h2>
+
+            <div class="datas">
+
+                <div class="data-card">
+
+                    <div>
+                        <strong>29/09/2026</strong>
+                        <span>Terça-feira</span>
+                    </div>
+
+                    <div class="vagas">
+                        20 vagas disponíveis
+                    </div>
+
+                    <button class="btn-agendar">
+                        Agendar
+                    </button>
+
+                </div>
+
+
+                <div class="data-card">
+
+                    <div>
+                        <strong>13/10/2026</strong>
+                        <span>Terça-feira</span>
+                    </div>
+
+                    <div class="vagas">
+                        20 vagas disponíveis
+                    </div>
+
+                    <button class="btn-agendar">
+                        Agendar
+                    </button>
+
+                </div>
+
+
+                <div class="data-card">
+
+                    <div>
+                        <strong>27/10/2026</strong>
+                        <span>Terça-feira</span>
+                    </div>
+
+                    <div class="vagas">
+                        20 vagas disponíveis
+                    </div>
+
+                    <button class="btn-agendar">
+                        Agendar
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <div id="mensagem" class="mensagem"></div>
+
     </main>
+
+
+    <footer>
+
+        <p>
+            GeriAgenda © 2026 -
+            Sistema de agendamento de consultas geriátricas gratuitas.
+        </p>
+
+    </footer>
+
 
     <script src="js/script.js"></script>
 

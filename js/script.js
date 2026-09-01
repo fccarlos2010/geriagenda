@@ -1,62 +1,42 @@
-const cadastroForm = document.getElementById("cadastroForm");
+const horarios = document.querySelectorAll(".horario.disponivel");
 const mensagem = document.getElementById("mensagem");
 
-cadastroForm.addEventListener("submit", function (event) {
+horarios.forEach(function (horario) {
 
-    event.preventDefault();
+    horario.addEventListener("click", function () {
 
-    const nome = document.getElementById("nome").value;
-    const cpf = document.getElementById("cpf").value;
-    const nascimento = document.getElementById("nascimento").value;
-    const telefone = document.getElementById("telefone").value;
-    const email = document.getElementById("email").value;
-    const senha = document.getElementById("senha").value;
-    const confirmarSenha = document.getElementById("confirmarSenha").value;
+        horarios.forEach(function (item) {
+            item.classList.remove("selecionado");
+        });
 
-    if (
-        nome === "" ||
-        cpf === "" ||
-        nascimento === "" ||
-        telefone === "" ||
-        email === "" ||
-        senha === "" ||
-        confirmarSenha === ""
-    ) {
+        horario.classList.add("selecionado");
 
-        mensagem.textContent = "Preencha todos os campos.";
-
-        return;
-    }
-
-    if (senha !== confirmarSenha) {
-
-        mensagem.textContent = "As senhas não são iguais.";
-
-        return;
-    }
-
-    const dataNascimento = new Date(nascimento);
-    const hoje = new Date();
-
-    let idade = hoje.getFullYear() - dataNascimento.getFullYear();
-
-    const mes = hoje.getMonth() - dataNascimento.getMonth();
-
-    if (
-        mes < 0 ||
-        (mes === 0 && hoje.getDate() < dataNascimento.getDate())
-    ) {
-        idade--;
-    }
-
-    if (idade < 60) {
+        const hora = horario.getAttribute("data-horario");
 
         mensagem.textContent =
-            "O GeriAgenda é destinado a pacientes com 60 anos ou mais.";
+            "Horário selecionado: " + hora +
+            ". Clique novamente para confirmar o agendamento.";
 
-        return;
-    }
+    });
 
-    mensagem.textContent =
-        "Cadastro realizado com sucesso!";
+});
+
+
+const botoesAgendar = document.querySelectorAll(".btn-agendar");
+
+botoesAgendar.forEach(function (botao) {
+
+    botao.addEventListener("click", function () {
+
+        const data = botao
+            .parentElement
+            .querySelector("strong")
+            .textContent;
+
+        mensagem.textContent =
+            "Data selecionada: " + data +
+            ". Agora escolha um horário disponível.";
+
+    });
+
 });
