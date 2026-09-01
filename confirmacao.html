@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar Agendamento - GeriAgenda</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f1f5f9;
+            color: #1f2937;
+        }
+
+        header {
+            background-color: #2f80ed;
+            color: white;
+            min-height: 68px;
+            padding: 12px 6%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background-color: white;
+            color: #2f80ed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo-text h1 {
+            font-size: 20px;
+            margin-bottom: 2px;
+        }
+
+        .logo-text p {
+            font-size: 11px;
+        }
+
+        .usuario {
+            font-size: 14px;
+        }
+
+        main {
+            width: 100%;
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .titulo {
+            margin-bottom: 25px;
+        }
+
+        .titulo h2 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .titulo p {
+            color: #64748b;
+            font-size: 15px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 22px;
+        }
+
+        .informacoes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .informacao {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 16px;
+            background-color: #f8fafc;
+        }
+
+        .informacao span {
+            display: block;
+            font-size: 13px;
+            color: #64748b;
+            margin-bottom: 6px;
+        }
+
+        .informacao strong {
+            font-size: 16px;
+        }
+
+        .aviso {
+            margin-top: 22px;
+            padding: 15px;
+            border-left: 4px solid #2f80ed;
+            background-color: #eff6ff;
+            border-radius: 5px;
+            color: #334155;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .botoes {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        button {
+            border: none;
+            border-radius: 7px;
+            padding: 13px 25px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn-voltar {
+            background-color: #e2e8f0;
+            color: #334155;
+        }
+
+        .btn-confirmar {
+            background-color: #2f80ed;
+            color: white;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .mensagem {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #dcfce7;
+            color: #166534;
+            border-radius: 7px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 12px 20px;
+            }
+
+            .usuario {
+                display: none;
+            }
+
+            main {
+                margin: 25px auto;
+                padding: 0 15px;
+            }
+
+            .titulo h2 {
+                font-size: 23px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .informacoes {
+                grid-template-columns: 1fr;
+            }
+
+            .botoes {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo-area">
+
+            <div class="logo">
+                G
+            </div>
+
+            <div class="logo-text">
+                <h1>GeriAgenda</h1>
+                <p>Agendamento de consultas geriátricas</p>
+            </div>
+
+        </div>
+
+        <div class="usuario">
+            Olá, Maria Silva 👤
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <div class="titulo">
+            <h2>Confirmar agendamento</h2>
+            <p>Confira os dados da consulta antes de confirmar.</p>
+        </div>
+
+
+        <section class="card">
+
+            <h3>Resumo do agendamento</h3>
+
+            <div class="informacoes">
+
+                <div class="informacao">
+                    <span>Paciente</span>
+                    <strong>Maria Silva</strong>
+                </div>
+
+                <div class="informacao">
+                    <span>Data da consulta</span>
+                    <strong>15 de setembro de 2026</strong>
+                </div>
+
+                <div class="informacao">
+                    <span>Horário</span>
+                    <strong>07:30h</strong>
+                </div>
+
+                <div class="informacao">
+                    <span>Tipo de atendimento</span>
+                    <strong>Consulta geriátrica</strong>
+                </div>
+
+            </div>
+
+
+            <div class="aviso">
+                <strong>Importante:</strong>
+                O atendimento é gratuito e destinado a pessoas com
+                60 anos ou mais. A consulta possui duração aproximada
+                de 40 minutos.
+            </div>
+
+
+            <div class="botoes">
+
+                <button
+                    type="button"
+                    class="btn-voltar"
+                    onclick="voltarHorario()">
+                    Voltar
+                </button>
+
+                <button
+                    type="button"
+                    class="btn-confirmar"
+                    onclick="confirmarAgendamento()">
+                    Confirmar agendamento
+                </button>
+
+            </div>
+
+
+            <div id="mensagem" class="mensagem">
+                Agendamento confirmado com sucesso!
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script>
+
+        function confirmarAgendamento() {
+
+            const mensagem = document.getElementById("mensagem");
+
+            mensagem.style.display = "block";
+
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: "smooth"
+            });
+        }
+
+
+        function voltarHorario() {
+
+            window.location.href = "index.html";
+
+        }
+
+    </script>
+
+</body>
+</html>
