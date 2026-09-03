@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GeriAgenda - Gerenciar Horários</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="topo">
+
+        <div class="logo-area">
+
+            <div class="logo-icon">G</div>
+
+            <div>
+                <h1>GeriAgenda</h1>
+                <p>Agendamento de consultas geriátricas</p>
+            </div>
+
+        </div>
+
+        <div class="usuario">
+            Olá, Responsável!
+            <span>👤</span>
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+        <div class="cabecalho-pagina">
+
+            <div>
+
+                <h2>Gerenciar horários de atendimento</h2>
+
+                <p>
+                    Cadastre e acompanhe os horários disponíveis
+                    para as consultas geriátricas.
+                </p>
+
+            </div>
+
+            <a href="painel-responsavel.html" class="voltar">
+                ← Voltar
+            </a>
+
+        </div>
+
+
+        <section class="card">
+
+            <h2>Novo horário de atendimento</h2>
+
+            <form id="formHorario">
+
+                <div class="campo">
+
+                    <label for="data">
+                        Data do atendimento
+                    </label>
+
+                    <input
+                        type="date"
+                        id="data"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="horario">
+                        Horário
+                    </label>
+
+                    <input
+                        type="time"
+                        id="horario"
+                        required
+                    >
+
+                </div>
+
+
+                <button type="submit" class="btn-principal">
+                    Cadastrar horário
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <section class="card">
+
+            <h2>Horários cadastrados</h2>
+
+            <div class="tabela">
+
+                <div class="linha cabecalho">
+
+                    <strong>Data</strong>
+                    <strong>Horário</strong>
+                    <strong>Situação</strong>
+
+                </div>
+
+
+                <div class="linha">
+
+                    <span>15/09/2026</span>
+                    <span>07:30</span>
+
+                    <span class="status-confirmado">
+                        Disponível
+                    </span>
+
+                </div>
+
+
+                <div class="linha">
+
+                    <span>15/09/2026</span>
+                    <span>08:10</span>
+
+                    <span class="status-confirmado">
+                        Ocupado
+                    </span>
+
+                </div>
+
+
+                <div class="linha">
+
+                    <span>15/09/2026</span>
+                    <span>08:50</span>
+
+                    <span class="status-confirmado">
+                        Disponível
+                    </span>
+
+                </div>
+
+
+                <div class="linha">
+
+                    <span>15/09/2026</span>
+                    <span>09:30</span>
+
+                    <span class="status-confirmado">
+                        Disponível
+                    </span>
+
+                </div>
+
+
+                <div class="linha">
+
+                    <span>15/09/2026</span>
+                    <span>10:10</span>
+
+                    <span class="status-confirmado">
+                        Disponível
+                    </span>
+
+                </div>
+
+
+                <div class="linha">
+
+                    <span>15/09/2026</span>
+                    <span>10:50</span>
+
+                    <span class="status-confirmado">
+                        Disponível
+                    </span>
+
+                </div>
+
+
+                <div class="linha">
+
+                    <span>15/09/2026</span>
+                    <span>11:30</span>
+
+                    <span class="status-confirmado">
+                        Disponível
+                    </span>
+
+                </div>
+
+
+                <div class="linha">
+
+                    <span>15/09/2026</span>
+                    <span>12:10</span>
+
+                    <span class="status-confirmado">
+                        Disponível
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <div id="mensagem" class="mensagem"></div>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            GeriAgenda © 2026 -
+            Sistema de agendamento de consultas geriátricas gratuitas.
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        const form = document.getElementById("formHorario");
+
+        const mensagem = document.getElementById("mensagem");
+
+
+        form.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            mensagem.textContent =
+                "Horário de atendimento cadastrado com sucesso!";
+
+            mensagem.classList.add("sucesso");
+
+            form.reset();
+
+        });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GeriAgenda - Painel do Responsável</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="topo">
+
+        <div class="logo-area">
+
+            <div class="logo-icon">
+                G
+            </div>
+
+            <div>
+                <h1>GeriAgenda</h1>
+                <p>Agendamento de consultas geriátricas</p>
+            </div>
+
+        </div>
+
+        <div class="usuario">
+            Olá, Responsável!
+            <span>👤</span>
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+        <div class="cabecalho-pagina">
+
+            <div>
+
+                <h2>Painel do Responsável</h2>
+
+                <p>
+                    Gerencie os agendamentos das consultas geriátricas.
+                </p>
+
+            </div>
+
+            <a href="index.html" class="voltar">
+                ← Sair
+            </a>
+
+        </div>
+
+
+        <section class="resumo">
+
+            <div class="resumo-card">
+
+                <span class="icone">
+                    📅
+                </span>
+
+                <div>
+                    <strong>12</strong>
+                    <span>Agendamentos hoje</span>
+                </div>
+
+            </div>
+
+
+            <div class="resumo-card">
+
+                <span class="icone">
+                    👥
+                </span>
+
+                <div>
+                    <strong>20</strong>
+                    <span>Vagas disponíveis</span>
+                </div>
+
+            </div>
+
+
+            <div class="resumo-card">
+
+                <span class="icone">
+                    ✅
+                </span>
+
+                <div>
+                    <strong>08</strong>
+                    <span>Consultas realizadas</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="painel">
+
+            <div class="titulo-painel">
+
+                <div>
+
+                    <h2>Agendamentos</h2>
+
+                    <p>
+                        Consulte os pacientes agendados para atendimento.
+                    </p>
+
+                </div>
+
+                <button class="btn-principal">
+                    + Novo atendimento
+                </button>
+
+            </div>
+
+
+            <div class="tabela-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Horário</th>
+                            <th>Paciente</th>
+                            <th>Telefone</th>
+                            <th>Situação</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+                                <strong>07:30</strong>
+                            </td>
+
+                            <td>
+                                Maria Silva
+                            </td>
+
+                            <td>
+                                (86) 99999-0000
+                            </td>
+
+                            <td>
+                                <span class="status confirmado">
+                                    Confirmado
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <strong>08:10</strong>
+                            </td>
+
+                            <td>
+                                João Pereira
+                            </td>
+
+                            <td>
+                                (86) 98888-1111
+                            </td>
+
+                            <td>
+                                <span class="status confirmado">
+                                    Confirmado
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <strong>08:50</strong>
+                            </td>
+
+                            <td>
+                                Ana Santos
+                            </td>
+
+                            <td>
+                                (86) 97777-2222
+                            </td>
+
+                            <td>
+                                <span class="status aguardando">
+                                    Aguardando
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <strong>09:30</strong>
+                            </td>
+
+                            <td>
+                                José Oliveira
+                            </td>
+
+                            <td>
+                                (86) 96666-3333
+                            </td>
+
+                            <td>
+                                <span class="status confirmado">
+                                    Confirmado
+                                </span>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <section class="acoes">
+
+            <h2>Ações rápidas</h2>
+
+            <div class="acoes-grid">
+
+                <button>
+                    <a href="gerenciar-datas.html" class="acao-botao">
+    📅 Gerenciar datas
+</a>
+                </button>
+
+                <button>
+                    <a href="gerenciar-horarios.html" class="acao-botao">
+    🕐 Gerenciar horários
+</a>
+                </button>
+
+                <button>
+                    👥 <a href="consultar-pacientes.html" class="acao-botao">
+    👥 Consultar pacientes
+</a>
+                </button>
+
+                <button>
+                    📊 <a href="relatorios.html" class="acao-botao">
+    📊 Relatórios
+</a>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <div id="mensagem" class="mensagem"></div>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            GeriAgenda © 2026 -
+            Sistema de agendamento de consultas geriátricas gratuitas.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GeriAgenda - Consultar Pacientes</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="topo">
+
+        <div class="logo-area">
+
+            <div class="logo-icon">G</div>
+
+            <div>
+                <h1>GeriAgenda</h1>
+                <p>Agendamento de consultas geriátricas</p>
+            </div>
+
+        </div>
+
+        <div class="usuario">
+            Olá, Responsável!
+            <span>👤</span>
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+        <div class="cabecalho-pagina">
+
+            <div>
+
+                <h2>Consultar pacientes</h2>
+
+                <p>
+                    Consulte os pacientes cadastrados no sistema
+                    e seus respectivos agendamentos.
+                </p>
+
+            </div>
+
+            <a href="painel-responsavel.html" class="voltar">
+                ← Voltar
+            </a>
+
+        </div>
+
+
+        <section class="card">
+
+            <h2>Pesquisar paciente</h2>
+
+            <div class="campo">
+
+                <label for="pesquisa">
+                    Nome do paciente
+                </label>
+
+                <input
+                    type="text"
+                    id="pesquisa"
+                    placeholder="Digite o nome do paciente..."
+                >
+
+            </div>
+
+        </section>
+
+
+        <section class="card">
+
+            <h2>Pacientes cadastrados</h2>
+
+            <div class="tabela-container">
+
+                <table id="tabelaPacientes">
+
+                    <thead>
+
+                        <tr>
+                            <th>Paciente</th>
+                            <th>Telefone</th>
+                            <th>Data</th>
+                            <th>Horário</th>
+                            <th>Situação</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>Maria Silva</td>
+
+                            <td>(86) 99999-0000</td>
+
+                            <td>15/09/2026</td>
+
+                            <td>07:30</td>
+
+                            <td>
+                                <span class="status confirmado">
+                                    Confirmado
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>João Pereira</td>
+
+                            <td>(86) 98888-1111</td>
+
+                            <td>15/09/2026</td>
+
+                            <td>08:10</td>
+
+                            <td>
+                                <span class="status confirmado">
+                                    Confirmado
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>Ana Santos</td>
+
+                            <td>(86) 97777-2222</td>
+
+                            <td>15/09/2026</td>
+
+                            <td>08:50</td>
+
+                            <td>
+                                <span class="status aguardando">
+                                    Aguardando
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>José Oliveira</td>
+
+                            <td>(86) 96666-3333</td>
+
+                            <td>15/09/2026</td>
+
+                            <td>09:30</td>
+
+                            <td>
+                                <span class="status confirmado">
+                                    Confirmado
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>Francisca Costa</td>
+
+                            <td>(86) 95555-4444</td>
+
+                            <td>15/09/2026</td>
+
+                            <td>10:10</td>
+
+                            <td>
+                                <span class="status confirmado">
+                                    Confirmado
+                                </span>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <div id="mensagem" class="mensagem"></div>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            GeriAgenda © 2026 -
+            Sistema de agendamento de consultas geriátricas gratuitas.
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        const pesquisa = document.getElementById("pesquisa");
+
+        const tabela = document.getElementById("tabelaPacientes");
+
+        pesquisa.addEventListener("input", function () {
+
+            const texto = pesquisa.value.toLowerCase();
+
+            const linhas = tabela
+                .querySelector("tbody")
+                .querySelectorAll("tr");
+
+            linhas.forEach(function (linha) {
+
+                const paciente =
+                    linha.cells[0].textContent.toLowerCase();
+
+                if (paciente.includes(texto)) {
+
+                    linha.style.display = "";
+
+                } else {
+
+                    linha.style.display = "none";
+
+                }
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
